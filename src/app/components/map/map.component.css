@@ -1,0 +1,28 @@
+.map-container {
+  position: relative;
+}
+
+
+.card {
+  text-align: center;
+  color: black;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+h2 {
+  text-align: center;
+  color: rgb(21, 20, 20);
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.mapa {
+  width: 100%;
+  height: 400px; /* Ajusta la altura según tus necesidades */
+  border: 1px solid #ddd; /* Borde opcional */
+  margin-top: 20px; /* Espacio superior opcional */
+}
