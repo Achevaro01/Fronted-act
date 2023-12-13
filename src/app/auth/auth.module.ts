@@ -24,4 +24,5 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
   ]
 })
+
 export class AuthModule { }

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   constructor( private router: Router,
                private fb: FormBuilder,
-               private usuarioService: UsuarioService) { }
+               private usuarioService: UsuarioService,
+               private ngZone: NgZone ) { }
 
   ngOnInit(): void {
   }
@@ -52,10 +53,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
 
   handleCredentialResponse(response: any) {
-    console.log("Encoded JWT ID token: " + response.credential);
+    // console.log({esto: this});
+    // console.log("Encoded JWT ID token: " + response.credential);
     this.usuarioService.loginGoogle(response.credential)
       .subscribe(resp => {
-        console.log({ login: resp})
+        // console.log({ login: resp})
+        this.router.navigateByUrl('/');
       });
   }
 
@@ -73,6 +76,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
           localStorage.removeItem('email');
         }
 
+        //Navegar al Dashboard
+        this.router.navigateByUrl('/');
+
 
         // console.log(resp)
       }, (err) => {
@@ -82,11 +88,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
           icon: 'error',
           confirmButtonColor: '#3085d6',
         });
-      })
-
-
-
-    // this.router.navigateByUrl('/');
+      });
   }
 
 }
