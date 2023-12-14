@@ -6,7 +6,6 @@ const base_url = environment.base_url;
 @Injectable({
   providedIn: 'root'
 })
-
 export class FileUploadService {
 
   constructor() { }
@@ -19,10 +18,9 @@ export class FileUploadService {
 
     try {
 
-      const url = `${ base_url}/upload/${ tipo }/${ id }`;
+      const url = `${ base_url }/upload/${ tipo }/${ id }`;
       const formData = new FormData();
       formData.append('imagen', archivo);
-
 
       const resp = await fetch( url, {
         method: 'PUT',
@@ -34,20 +32,20 @@ export class FileUploadService {
 
       const data = await resp.json();
 
-      if( data.ok) {
+      if ( data.ok ) {
         return data.nombreArchivo;
-      } else{
-        console.log( data.msg );
+      } else {
+        console.log(data.msg);
         return false;
       }
 
-      // console.log(data);
-
-      // return 'nombre de la imagen';
-
     } catch (error) {
-      console.log( error );
+      console.log(error);
       return false;
     }
+
   }
+
+
+
 }

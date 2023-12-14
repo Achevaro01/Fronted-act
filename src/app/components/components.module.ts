@@ -11,6 +11,7 @@ import { DonaComponent } from './dona/dona.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { MapComponent } from './map/map.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { ModalImagenComponent } from './modal-imagen/modal-imagen.component';
 
 
 
@@ -22,6 +23,7 @@ import { ContactoComponent } from './contacto/contacto.component';
     CarouselComponent,
     MapComponent,
     ContactoComponent,
+    ModalImagenComponent,
   ],
   exports: [
     IncrementadorComponent,
@@ -29,6 +31,7 @@ import { ContactoComponent } from './contacto/contacto.component';
     CarouselComponent,
     MapComponent,
     ContactoComponent,
+    ModalImagenComponent
 
   ],
   imports: [
