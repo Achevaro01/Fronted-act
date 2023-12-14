@@ -9,15 +9,19 @@ import { RegisterForm } from '../interfaces/register-form.interface';
 import { LoginForm } from '../interfaces/login-form.interface';
 import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
+import { Usuario } from '../models/usuario.model';
 
 declare const google: any;
 
 const base_url = environment.base_url;
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
+
+  public usuario: Usuario;
 
   constructor( private http: HttpClient,
                private router: Router ) { }
@@ -39,10 +43,13 @@ export class UsuarioService {
         'x-token': token
       }
     }).pipe(
-      tap( (resp: any) => {
+      map( (resp: any) => {
+        const { email, google, nombre, role, img= '', uid } = resp.usuario;
+        this.usuario = new Usuario(nombre, email, '', img, google, role, uid);
+
         localStorage.setItem('token', resp.token);
+        return true;
       }),
-      map( resp => true ),
       catchError( error => of(false))
     );
   }
