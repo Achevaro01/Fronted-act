@@ -16,6 +16,7 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { CitasComponent } from './mantenimientos/citas/citas.component';
 
 
 
@@ -31,6 +32,7 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
     RxjsComponent,
     PerfilComponent,
     UsuariosComponent,
+    CitasComponent,
   ],
   exports: [
     DashboardComponent,
@@ -38,6 +40,7 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
     Grafica1Component,
     PagesComponent,
     AccountSettingsComponent,
+    PromesasComponent
 
   ],
   imports: [

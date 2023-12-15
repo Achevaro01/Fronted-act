@@ -12,6 +12,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { MapComponent } from './map/map.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ModalImagenComponent } from './modal-imagen/modal-imagen.component';
+import { ModalCitaComponent } from './modal-cita/modal-cita.component';
 
 
 
@@ -24,6 +25,7 @@ import { ModalImagenComponent } from './modal-imagen/modal-imagen.component';
     MapComponent,
     ContactoComponent,
     ModalImagenComponent,
+    ModalCitaComponent,
   ],
   exports: [
     IncrementadorComponent,
@@ -31,7 +33,8 @@ import { ModalImagenComponent } from './modal-imagen/modal-imagen.component';
     CarouselComponent,
     MapComponent,
     ContactoComponent,
-    ModalImagenComponent
+    ModalImagenComponent,
+    ModalCitaComponent
 
   ],
   imports: [

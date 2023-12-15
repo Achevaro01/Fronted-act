@@ -14,6 +14,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 
 // Mantenimientos
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { CitasComponent } from './mantenimientos/citas/citas.component';
+import { AdminGuard } from '../guards/admin.guard';
 
 const routes: Routes = [
     {
@@ -23,15 +25,16 @@ const routes: Routes = [
         children: [
             { path: '', component: DashboardComponent, data: { titulo: 'Achecars' } },
             { path: 'progress', component: ProgressComponent, data: { titulo: 'Redes Sociales' }},
-            { path: 'redes-sociales', component: Grafica1Component, data: { titulo: 'Gráfica #1' }},
+            { path: 'redes-sociales', component: Grafica1Component, data: { titulo: 'Redes Sociales' }},
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes de cuenta' }},
-            { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
-            { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' }},
+            { path: 'cita', component: PromesasComponent, data: { titulo: 'cita' }},
+            // { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' }},
             { path: 'perfil', component: PerfilComponent, data: { titulo: 'Perfil de usuario' }},
 
 
             // Mantenimientos
-            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Usuarioo de aplicación' }},
+            { path: 'usuarios', canActivate: [AdminGuard ], component: UsuariosComponent, data: { titulo: 'Usuario de aplicación' }},
+            { path: 'citas',canActivate: [AdminGuard ], component: CitasComponent, data: { titulo: 'Vistas de citas' }},
 
         ]
     },

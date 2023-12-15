@@ -1,1 +1,28 @@
-<p>promesas works!</p>
+
+<form [formGroup]="citaForm" (ngSubmit)="onSubmit()" class="cita-form">
+  <div class="form-group">
+    <label for="motivoCita">Motivo de la cita:</label>
+    <div class="input-group">
+      <input type="text" formControlName="motivoCita" />
+      <span class="input-icon"><i class="fas fa-pencil-alt"></i></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fecha">Fecha:</label>
+    <div class="input-group">
+      <input type="date" formControlName="fecha" />
+      <span class="input-icon"><i class="far fa-calendar-alt"></i></span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="hora">Hora:</label>
+    <div class="input-group">
+      <input type="time" formControlName="hora" />
+      <span class="input-icon"><i class="far fa-clock"></i></span>
+    </div>
+  </div>
+  <button type="submit">Crear Cita</button>
+</form>
+
+
+

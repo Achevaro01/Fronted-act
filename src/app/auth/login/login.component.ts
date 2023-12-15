@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   handleCredentialResponse(response: any) {
     // console.log({esto: this});
-    // console.log("Encoded JWT ID token: " + response.credential);
+    console.log("Encoded JWT ID token: " + response.credential);
     this.usuarioService.loginGoogle(response.credential)
       .subscribe(resp => {
         // console.log({ login: resp})
