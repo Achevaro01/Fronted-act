@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 
 import { ChartsModule } from 'ng2-charts';
@@ -40,6 +40,7 @@ import { ModalCitaComponent } from './modal-cita/modal-cita.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     ChartsModule,
     AgmCoreModule.forRoot({apiKey: "AIzaSyDUPotZFtIcWjO3DQC6sYPDJ5rRAJ7ToXs"}),
 

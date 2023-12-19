@@ -38,20 +38,29 @@ export class CitaService {
             );
   }
 
+  obtenerCitaPorId(id: string ) {
+    const url = `${ base_url }/citas/${ id }`;
+    return this.http.get( url, this.headers )
+              .pipe(
+                map( (resp: {ok: boolean, cita: Cita }) => resp.cita )
+              );
+  }
+
   crearCita(cita: Cita ): Observable<any> {
 
     const url = `${ base_url }/citas`;
     return this.http.post( url, cita, this.headers );
   }
 
-  // borrarCita( _id: string ) {
+  actualizarCita( cita: Cita ) {
 
-  //   const url = `${ base_url }/citas/${ _id }`;
-  //   return this.http.delete( url, this.headers );
-  // }
+    const url = `${ base_url }/citas/${ cita._id }`;
+    return this.http.put( url, cita, this.headers );
+  }
 
-  eliminarCita(cita) {
-    const url = `${ base_url }/citas/${ cita.id }`;
+
+  eliminarCita(_id:string) {
+    const url = `${ base_url }/citas/${ _id }`;
     return this.http.delete( url, this.headers );
   }
 

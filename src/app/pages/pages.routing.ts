@@ -28,6 +28,7 @@ const routes: Routes = [
             { path: 'redes-sociales', component: Grafica1Component, data: { titulo: 'Redes Sociales' }},
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes de cuenta' }},
             { path: 'cita', component: PromesasComponent, data: { titulo: 'cita' }},
+            { path: 'grafica', component: Grafica1Component, data: { titulo: 'Gráficas' }},
             // { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' }},
             { path: 'perfil', component: PerfilComponent, data: { titulo: 'Perfil de usuario' }},
 

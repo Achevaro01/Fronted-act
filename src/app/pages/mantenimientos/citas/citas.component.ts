@@ -12,8 +12,7 @@ export class CitasComponent implements OnInit {
 
   public citas: Cita[] = [];
   public cargando: boolean = true;
-  public fechaSeleccionada: Date | undefined;
-  public horaSeleccionada: string | undefined;
+  public citaSeleccionada: Cita;
 
   constructor(private citaService: CitaService,
               private modalCitaService: ModalCitaService) { }
@@ -35,8 +34,10 @@ export class CitasComponent implements OnInit {
 
   abrirModal( cita: Cita ) {
     console.log(cita);
+    this.citaSeleccionada = cita;
     this.modalCitaService.abrirModal();
   }
+
 
   eliminarCita( cita: Cita ) {
 
@@ -49,7 +50,7 @@ export class CitasComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
 
-        this.citaService.eliminarCita( cita )
+        this.citaService.eliminarCita( cita._id )
           .subscribe( resp => {
 
             this.cargarCitas();
